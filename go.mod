@@ -1,4 +1,4 @@
-module github.com/brutella/dnssd
+module github.com/rclancey/dnssd
 
 require (
 	github.com/miekg/dns v1.1.1
