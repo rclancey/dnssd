@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/rclancey/dnssd/v2"
@@ -44,7 +45,15 @@ func main() {
 	for _, res := range results {
 		if len(res.IPs[0]) == 4 {
 			log.Printf("%s:%d", res.IPs[0], res.Port)
-			res, err := client.Get(fmt.Sprintf("http://%s:%d/", res.IPs[0], res.Port))
+			useSSL := false
+			if res.Text["ssl"] != "" {
+				useSSL, _ = strconv.ParseBool(res.Text["ssl"])
+			}
+			proto := "http"
+			if useSSL {
+				proto = "https"
+			}
+			res, err := client.Get(fmt.Sprintf("%s://%s:%d/", proto, res.IPs[0], res.Port))
 			if err != nil {
 				log.Println(err)
 			} else {

@@ -65,11 +65,12 @@ func Browse(req LookupRequest) []*BrowseEntry {
 	return res
 }
 
-func Register(name string, port int) (shutdown func(), err error) {
+func Register(name string, port int, info map[string]string) (shutdown func(), err error) {
 	cfg := Config{
 		Name: fmt.Sprintf("%s server", name),
 		Type: fmt.Sprintf("_%s._tcp", name),
 		Port: port,
+		Text: info,
 	}
 	svc, err := NewService(cfg)
 	if err != nil {
