@@ -2,7 +2,7 @@ package dnssd
 
 import (
 	"context"
-	"github.com/rclancey/dnssd/log"
+	"github.com/rclancey/dnssd/v2/log"
 	"github.com/miekg/dns"
 )
 

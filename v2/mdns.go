@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/rclancey/dnssd/log"
+	"github.com/rclancey/dnssd/v2/log"
 	"github.com/miekg/dns"
 	"golang.org/x/net/ipv4"
 	"golang.org/x/net/ipv6"
