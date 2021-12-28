@@ -1,4 +1,4 @@
-module github.com/rclancey/dnssd
+module github.com/rclancey/dnssd/v2
 
 require (
 	github.com/miekg/dns v1.1.1
