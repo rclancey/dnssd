@@ -16,7 +16,7 @@ The following code creates a service with name "My Website._http._tcp.local." fo
 ```go
 import (
 	"context"
-	"github.com/brutella/dnssd"
+	"github.com/rclancey/dnssd"
 )
 
 cfg := dnssd.Config{
